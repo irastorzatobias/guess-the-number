@@ -17,6 +17,8 @@ function main() {
   });
   // Check!
   document.querySelector('.check').addEventListener('click', () => {
+    console.log(randNum);
+    console.log(highscore);
     let message = document.querySelector('.message');
     const guess = Number(document.querySelector('.guess').value);
     if (score > 0) {
@@ -27,7 +29,8 @@ function main() {
         scoreText.textContent = score;
       } else if (guess == randNum) {
         // Player wins
-        highscoreText.textContent = highscore + 1;
+        highscore = highscore + 1;
+        highscoreText.textContent = highscore;
         secretNumber.textContent = randNum;
         message.textContent = 'Correct';
         document.querySelector('h1').textContent = 'YOU WON';
